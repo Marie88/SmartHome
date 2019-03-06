@@ -45,7 +45,7 @@ public static void main(String[] args) {
 */
 		enviroAgent.start();
 		agent1.start();
-                agent2.start();
+               // agent2.start();
 
 		} catch (Exception e) {logger.error("Error " + e.getMessage());}
  	}

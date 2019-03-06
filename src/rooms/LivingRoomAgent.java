@@ -26,13 +26,6 @@ public class LivingRoomAgent extends SingleAgent {
         this.light = light;
     }
     
-    @Override
-    public void onMessage(ACLMessage msg){
-        
-        System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
-    }
-    
-    @Override
      public void execute(){
         System.out.println("Hi! I'm agent "+this.getName()+" and I start my execution");
         ACLMessage msg = null;
