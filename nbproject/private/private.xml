@@ -5,8 +5,12 @@
         <group>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/ACAgent.java</file>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/agent/Main.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/HeaterAgent.java</file>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/LightAgent.java</file>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/rooms/LivingRoomAgent.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/BlindsAgent.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/HumidityAgent.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/WindowAgent.java</file>
         </group>
     </open-files>
 </project-private>

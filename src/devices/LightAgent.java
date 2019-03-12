@@ -30,7 +30,7 @@ public class LightAgent extends BaseAgent{
         ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
 	msg.setSender(this.getAid());
 	msg.addReceiver(new AgentID("LivingRoomAgent"));
-	msg.setContent("Hi! I'm Light agent and the current light procentage is "+this.currentLight);
+	msg.setContent("Hi! I'm Light agent and the current light is "+this.currentLight+"%");
 	this.send(msg);
     }
 }

@@ -17,17 +17,19 @@ public class LivingRoomAgent extends SingleAgent {
     
     private int temp;
     private int light;
+    private int humidity;
     
-     boolean gotMsg = false;
+    boolean gotMsg = false;
     
-    public LivingRoomAgent(AgentID aid,int temp,int light) throws Exception {
+    public LivingRoomAgent(AgentID aid,int temp,int light,int humidity) throws Exception {
         super(aid);
         this.temp = temp;
         this.light = light;
+        this.humidity = humidity;
     }
     @Override
     public void onMessage(ACLMessage msg){
-        System.out.println("Hi! I'm agent "+this.getName()+"and I've received the message: "+msg.getContent());
+        System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
     }
      public void execute(){
         System.out.println("Hi! I'm agent "+this.getName()+" and I start my execution");
@@ -35,7 +37,9 @@ public class LivingRoomAgent extends SingleAgent {
         try {
                 msg = this.receiveACLMessage();
             } 
-        catch (InterruptedException e) { e.printStackTrace();}
+        catch (InterruptedException e) { this.gotMsg = false;   e.printStackTrace(); }
+        
+        this.gotMsg = true;
         System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
 
     }

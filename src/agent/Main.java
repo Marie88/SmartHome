@@ -1,6 +1,9 @@
 package agent;
 
 import devices.ACAgent;
+import devices.BlindsAgent;
+import devices.HeaterAgent;
+import devices.HumidityAgent;
 import devices.LightAgent;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
@@ -28,14 +31,17 @@ public static void main(String[] args) {
  /**
 * Instantiating device agents
 */
-		//Sender senderAgent = new Sender(new AgentID("Sender"));
-                LightAgent agent1 = new LightAgent(new AgentID("LightAgent"),50);
-                ACAgent    agent2 = new ACAgent(new AgentID("ACAgent"),25);
+                LightAgent agent_light = new LightAgent(new AgentID("LightAgent"),50);
+                ACAgent    agent_ac = new ACAgent(new AgentID("ACAgent"),25);
+                HumidityAgent agent_hum = new HumidityAgent(new AgentID("HumidityAgent"),30);
+                BlindsAgent agent_blin = new BlindsAgent(new AgentID("BlindsAgent"),50);
+                HeaterAgent agent_heat = new HeaterAgent(new AgentID("HeaterAgent"),25);
+                
 /**
  * Instantiating a room environment agent
 */
 		//Consumer consumerAgent = new Consumer(new AgentID("Consumer"));
-                LivingRoomAgent enviroAgent = new LivingRoomAgent(new AgentID("LivingRoomAgent"),25,50);
+                LivingRoomAgent enviroAgent = new LivingRoomAgent(new AgentID("LivingRoomAgent"),25,50,30);
 
 /**
 
@@ -44,8 +50,13 @@ public static void main(String[] args) {
 * Execute the agents
 */
 		enviroAgent.start();
-		agent1.start();
-                agent2.start();
+                
+		agent_light.start();
+                agent_ac.start();
+                agent_hum.start();
+                agent_blin.start();
+                agent_heat.start();
+                
 
 		} catch (Exception e) {logger.error("Error " + e.getMessage());}
  	}

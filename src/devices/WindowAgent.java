@@ -8,18 +8,20 @@ package devices;
 import es.upv.dsic.gti_ia.core.ACLMessage;
 import es.upv.dsic.gti_ia.core.AgentID;
 import es.upv.dsic.gti_ia.core.BaseAgent;
-
 /**
  *
  * @author admin
  */
-public class ACAgent extends BaseAgent{
-    
+
+public class WindowAgent extends BaseAgent{
     private int currentTemp;
+    private int currentHum;
+    
     private boolean active;
     
-    public ACAgent(AgentID aid,int temp) throws Exception {
+    public WindowAgent(AgentID aid,int temp,int hum) throws Exception {
         super(aid);
+        this.currentHum = hum;
         this.currentTemp = temp;
     }
     public void init(){this.active = true;}
@@ -29,8 +31,10 @@ public class ACAgent extends BaseAgent{
         ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
 	msg.setSender(this.getAid());
 	msg.addReceiver(new AgentID("LivingRoomAgent"));
-	msg.setContent("Hi! I'm AC agent and the current temperature is "+this.currentTemp);
+	msg.setContent("Hi! I'm Window agent and the current temperature is "+this.currentTemp+" and current humidity is "+this.currentHum+"%");
 	this.send(msg);
     }
     public void finalize(){this.active = false;}
+    
+    
 }
