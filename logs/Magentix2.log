@@ -219,3 +219,158 @@ IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: 
 IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"30872b6a-2f91-4415-b83a-6d8e14db043c"]
 IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"95f6e4f7-0545-4dab-bbd4-b351dbd0d591"]
 IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"e893ac90-3186-4acd-876b-bb7b1662e31c"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.ClientDelegate - Idle timeout is zero. Heartbeats are disabled
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"6a9ec3b9-2982-4cec-9186-9e7360676e2f"] ch=5 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"6a79d6cd-c0cc-4bed-8284-ddf87a749664"] ch=9 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"92bd994f-01e3-413e-bc9e-488297fee9e0"] ch=7 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"434e70da-ace8-48b5-8b30-a99aba58957b"] ch=1 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"78202f97-dc43-484e-bb1b-c2e6372e6ccc"] ch=11 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"434e70da-ace8-48b5-8b30-a99aba58957b"] ch=1 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"6a79d6cd-c0cc-4bed-8284-ddf87a749664"] ch=9 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"92bd994f-01e3-413e-bc9e-488297fee9e0"] ch=7 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"12f3d00e-3e8b-4ea6-a88d-32a3c5e8ec18"] ch=3 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"6a9ec3b9-2982-4cec-9186-9e7360676e2f"] ch=5 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"12f3d00e-3e8b-4ea6-a88d-32a3c5e8ec18"] ch=3 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"78202f97-dc43-484e-bb1b-c2e6372e6ccc"] ch=11 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"3634b1b8-8307-4d0a-b621-294b6d99ed84"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"7cc97ed9-db94-41ad-bfee-1f664e99960c"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"552f1906-7645-43f9-97a5-4b4b13ca2b9f"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"c61b36a0-7330-4c50-97a1-cc7118b6f6bb"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"68af5662-ff3a-41a2-93a8-1292a83c21db"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"4485fdc0-31f7-434b-906a-cb99c70180a5"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"104e89d6-ee7f-4621-9c81-9eadcfee0e81"] ch=13 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"104e89d6-ee7f-4621-9c81-9eadcfee0e81"] ch=13 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"104e89d6-ee7f-4621-9c81-9eadcfee0e81"] ch=13 id=3 MessageReject(transfers={[11, 11]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"104e89d6-ee7f-4621-9c81-9eadcfee0e81"] ch=13 id=4 MessageReject(transfers={[12, 12]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"104e89d6-ee7f-4621-9c81-9eadcfee0e81"] ch=13 id=5 MessageReject(transfers={[13, 13]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"104e89d6-ee7f-4621-9c81-9eadcfee0e81"] ch=13 id=6 MessageReject(transfers={[14, 14]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"104e89d6-ee7f-4621-9c81-9eadcfee0e81"] ch=13 id=7 MessageReject(transfers={[15, 15]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"104e89d6-ee7f-4621-9c81-9eadcfee0e81"] ch=13 id=8 MessageReject(transfers={[16, 16]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"104e89d6-ee7f-4621-9c81-9eadcfee0e81"] ch=13 id=9 MessageReject(transfers={[17, 17]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"104e89d6-ee7f-4621-9c81-9eadcfee0e81"] ch=13 id=10 MessageReject(transfers={[18, 18]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5027b38e-c5ca-4c8b-87b8-76ace92228ff"] ch=15 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5027b38e-c5ca-4c8b-87b8-76ace92228ff"] ch=15 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"92bd994f-01e3-413e-bc9e-488297fee9e0"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"6a9ec3b9-2982-4cec-9186-9e7360676e2f"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"12f3d00e-3e8b-4ea6-a88d-32a3c5e8ec18"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"434e70da-ace8-48b5-8b30-a99aba58957b"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"6a79d6cd-c0cc-4bed-8284-ddf87a749664"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"78202f97-dc43-484e-bb1b-c2e6372e6ccc"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.ClientDelegate - Idle timeout is zero. Heartbeats are disabled
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a8991aec-d7d6-46d2-b127-f838c09c2c41"] ch=7 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"1c3f5272-3347-45ca-888b-2578f51a8aa4"] ch=5 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"24a38e79-88bf-46ec-8a0a-a2683523ff3a"] ch=9 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"ab511443-3ca4-483d-8474-7ac788f3c703"] ch=3 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a8db62ee-700b-4a50-a6bf-d0bfae40ec17"] ch=11 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a8db62ee-700b-4a50-a6bf-d0bfae40ec17"] ch=11 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a8991aec-d7d6-46d2-b127-f838c09c2c41"] ch=7 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"ab511443-3ca4-483d-8474-7ac788f3c703"] ch=3 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"24a38e79-88bf-46ec-8a0a-a2683523ff3a"] ch=9 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"9143e0cd-775f-47c4-a2cc-ff3de64d66f5"] ch=1 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"9143e0cd-775f-47c4-a2cc-ff3de64d66f5"] ch=1 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"1c3f5272-3347-45ca-888b-2578f51a8aa4"] ch=5 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"d41f426d-c7be-4c30-8815-c54ad6693b94"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"b1ae22e2-3c15-4f3c-9289-f3370e83de38"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"82484783-5af7-4f23-9cfa-6e258b21c40c"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"e38c1fb4-9214-4b92-baa8-b68f607646c7"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"95246bfe-7b4b-434d-b88e-531010ec92fb"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"583bd6bd-b2bf-402f-b9b2-1061efb9b84a"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5b2d652b-c040-4835-afc8-e597ecfbd830"] ch=13 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5b2d652b-c040-4835-afc8-e597ecfbd830"] ch=13 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5b2d652b-c040-4835-afc8-e597ecfbd830"] ch=13 id=3 MessageReject(transfers={[11, 11]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5b2d652b-c040-4835-afc8-e597ecfbd830"] ch=13 id=4 MessageReject(transfers={[12, 12]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5b2d652b-c040-4835-afc8-e597ecfbd830"] ch=13 id=5 MessageReject(transfers={[13, 13]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5b2d652b-c040-4835-afc8-e597ecfbd830"] ch=13 id=6 MessageReject(transfers={[14, 14]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5b2d652b-c040-4835-afc8-e597ecfbd830"] ch=13 id=7 MessageReject(transfers={[15, 15]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5b2d652b-c040-4835-afc8-e597ecfbd830"] ch=13 id=8 MessageReject(transfers={[16, 16]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5b2d652b-c040-4835-afc8-e597ecfbd830"] ch=13 id=9 MessageReject(transfers={[17, 17]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5b2d652b-c040-4835-afc8-e597ecfbd830"] ch=13 id=10 MessageReject(transfers={[18, 18]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"ebcf5826-c04e-4e50-bfcc-5b381c5de2ee"] ch=15 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"ebcf5826-c04e-4e50-bfcc-5b381c5de2ee"] ch=15 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"ab511443-3ca4-483d-8474-7ac788f3c703"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"9143e0cd-775f-47c4-a2cc-ff3de64d66f5"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"24a38e79-88bf-46ec-8a0a-a2683523ff3a"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"1c3f5272-3347-45ca-888b-2578f51a8aa4"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"a8991aec-d7d6-46d2-b127-f838c09c2c41"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"a8db62ee-700b-4a50-a6bf-d0bfae40ec17"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.ClientDelegate - Idle timeout is zero. Heartbeats are disabled
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5b55d62d-5247-4734-be66-203758b5a861"] ch=11 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5b55d62d-5247-4734-be66-203758b5a861"] ch=11 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"3cead8c7-4a6c-417f-88cd-84bd3ba04029"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"27e2f462-9e0b-4e01-8689-0a90bc7d1c40"] ch=15 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"27e2f462-9e0b-4e01-8689-0a90bc7d1c40"] ch=15 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"5b55d62d-5247-4734-be66-203758b5a861"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.ClientDelegate - Idle timeout is zero. Heartbeats are disabled
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"dde14b59-51a5-4d38-902d-6a0c6936c1a4"] ch=5 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"ea1ce492-492b-4e86-b366-b59d1a605507"] ch=11 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"1c3bdd7f-83d8-4484-9be9-17cb6b977eda"] ch=3 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"7231abf8-045e-487f-81c6-9cafefef6da6"] ch=9 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"1ca2643a-5c0c-443a-9d1c-57b7941b375c"] ch=7 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"1c3bdd7f-83d8-4484-9be9-17cb6b977eda"] ch=3 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"ea1ce492-492b-4e86-b366-b59d1a605507"] ch=11 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"cd7db6dd-f968-44c7-9846-73b2b54fc7b4"] ch=1 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"7231abf8-045e-487f-81c6-9cafefef6da6"] ch=9 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"1ca2643a-5c0c-443a-9d1c-57b7941b375c"] ch=7 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"dde14b59-51a5-4d38-902d-6a0c6936c1a4"] ch=5 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"cd7db6dd-f968-44c7-9846-73b2b54fc7b4"] ch=1 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"706c7c11-e757-4720-95aa-a5746bb62daa"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"812fc924-f493-46f0-aa04-86e5e3982ec8"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"120d53d4-d74a-46d3-9338-1c365fb45908"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"2b1b0cf8-24da-476a-bd38-214b2233154d"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"4036d983-baa1-4258-a670-4c03493abfb5"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"14beb077-c32b-4a02-a0f2-5fa1c042e72b"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a1d37d3e-de0a-4f1a-a32f-7176b61b93f6"] ch=13 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a1d37d3e-de0a-4f1a-a32f-7176b61b93f6"] ch=13 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a1d37d3e-de0a-4f1a-a32f-7176b61b93f6"] ch=13 id=3 MessageReject(transfers={[11, 11]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a1d37d3e-de0a-4f1a-a32f-7176b61b93f6"] ch=13 id=4 MessageReject(transfers={[12, 12]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a1d37d3e-de0a-4f1a-a32f-7176b61b93f6"] ch=13 id=5 MessageReject(transfers={[13, 13]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a1d37d3e-de0a-4f1a-a32f-7176b61b93f6"] ch=13 id=6 MessageReject(transfers={[14, 14]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a1d37d3e-de0a-4f1a-a32f-7176b61b93f6"] ch=13 id=7 MessageReject(transfers={[15, 15]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a1d37d3e-de0a-4f1a-a32f-7176b61b93f6"] ch=13 id=8 MessageReject(transfers={[16, 16]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a1d37d3e-de0a-4f1a-a32f-7176b61b93f6"] ch=13 id=9 MessageReject(transfers={[17, 17]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a1d37d3e-de0a-4f1a-a32f-7176b61b93f6"] ch=13 id=10 MessageReject(transfers={[18, 18]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"118d8af0-8299-4da4-b853-89f2c01cbd43"] ch=15 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"118d8af0-8299-4da4-b853-89f2c01cbd43"] ch=15 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"ea1ce492-492b-4e86-b366-b59d1a605507"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"7231abf8-045e-487f-81c6-9cafefef6da6"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"1c3bdd7f-83d8-4484-9be9-17cb6b977eda"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"cd7db6dd-f968-44c7-9846-73b2b54fc7b4"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"dde14b59-51a5-4d38-902d-6a0c6936c1a4"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"1ca2643a-5c0c-443a-9d1c-57b7941b375c"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.ClientDelegate - Idle timeout is zero. Heartbeats are disabled
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a505cb88-c934-4b2c-9d37-5bf7546a00d5"] ch=3 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a1966dfa-029a-4f56-9a32-730555612f17"] ch=11 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"0687ec70-633a-425e-a2a1-b86259c8edaa"] ch=1 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"f31ec099-3927-4422-af33-06018d5c4a69"] ch=7 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"b7a16a6f-cdc7-47ba-8dce-e79d53aeccfa"] ch=5 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a505cb88-c934-4b2c-9d37-5bf7546a00d5"] ch=3 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"b7a16a6f-cdc7-47ba-8dce-e79d53aeccfa"] ch=5 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"a1966dfa-029a-4f56-9a32-730555612f17"] ch=11 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"aaba72d6-3a47-43c0-bb8f-714952a6c839"] ch=9 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"f31ec099-3927-4422-af33-06018d5c4a69"] ch=7 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"0687ec70-633a-425e-a2a1-b86259c8edaa"] ch=1 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"aaba72d6-3a47-43c0-bb8f-714952a6c839"] ch=9 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"c3c77e18-492e-4c4c-89d1-81a7097abd19"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"d5b92184-3d20-4f9b-935e-e67d2ba1f753"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"bd7e71b2-571d-4444-919a-a49cbacd467c"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"5dce6d6d-390b-4115-95bf-f9160ba45dbe"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"ab23b824-0aff-4bb4-83ea-26362e044fdf"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"0f526eee-381a-4f28-b8a3-ebeb8a1c4e5d"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"398b39e7-02c4-459e-9850-62882f84d482"] ch=13 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"398b39e7-02c4-459e-9850-62882f84d482"] ch=13 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"c85ae45b-2dc3-4d17-876f-c6442d0e162b"] ch=15 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"c85ae45b-2dc3-4d17-876f-c6442d0e162b"] ch=15 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"398b39e7-02c4-459e-9850-62882f84d482"] ch=13 id=3 MessageReject(transfers={[11, 11]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"398b39e7-02c4-459e-9850-62882f84d482"] ch=13 id=4 MessageReject(transfers={[12, 12]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"398b39e7-02c4-459e-9850-62882f84d482"] ch=13 id=5 MessageReject(transfers={[13, 13]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"398b39e7-02c4-459e-9850-62882f84d482"] ch=13 id=6 MessageReject(transfers={[14, 14]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"398b39e7-02c4-459e-9850-62882f84d482"] ch=13 id=7 MessageReject(transfers={[15, 15]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"398b39e7-02c4-459e-9850-62882f84d482"] ch=13 id=8 MessageReject(transfers={[16, 16]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"398b39e7-02c4-459e-9850-62882f84d482"] ch=13 id=9 MessageReject(transfers={[17, 17]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"398b39e7-02c4-459e-9850-62882f84d482"] ch=13 id=10 MessageReject(transfers={[18, 18]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"0687ec70-633a-425e-a2a1-b86259c8edaa"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"a1966dfa-029a-4f56-9a32-730555612f17"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"a505cb88-c934-4b2c-9d37-5bf7546a00d5"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"b7a16a6f-cdc7-47ba-8dce-e79d53aeccfa"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"aaba72d6-3a47-43c0-bb8f-714952a6c839"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"f31ec099-3927-4422-af33-06018d5c4a69"]

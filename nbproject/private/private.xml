@@ -10,7 +10,9 @@
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/rooms/LivingRoomAgent.java</file>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/BlindsAgent.java</file>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/HumidityAgent.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/GeneratorAgent.java</file>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/WindowAgent.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/rooms/BasementAgent.java</file>
         </group>
     </open-files>
 </project-private>

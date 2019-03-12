@@ -2,6 +2,7 @@ package agent;
 
 import devices.ACAgent;
 import devices.BlindsAgent;
+import devices.GeneratorAgent;
 import devices.HeaterAgent;
 import devices.HumidityAgent;
 import devices.LightAgent;
@@ -9,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import es.upv.dsic.gti_ia.core.AgentID;
 import es.upv.dsic.gti_ia.core.AgentsConnection;
+import rooms.BasementAgent;
 import rooms.LivingRoomAgent;
 
 public class Main {
@@ -36,26 +38,30 @@ public static void main(String[] args) {
                 HumidityAgent agent_hum = new HumidityAgent(new AgentID("HumidityAgent"),30);
                 BlindsAgent agent_blin = new BlindsAgent(new AgentID("BlindsAgent"),50);
                 HeaterAgent agent_heat = new HeaterAgent(new AgentID("HeaterAgent"),25);
-                
+                GeneratorAgent agent_gen = new GeneratorAgent(new AgentID("GeneratorAgent"),12);
 /**
  * Instantiating a room environment agent
 */
 		//Consumer consumerAgent = new Consumer(new AgentID("Consumer"));
-                LivingRoomAgent enviroAgent = new LivingRoomAgent(new AgentID("LivingRoomAgent"),25,50,30);
-
+                LivingRoomAgent living_agent = new LivingRoomAgent(new AgentID("LivingRoomAgent"),25,50,30);
+                BasementAgent basement_agent = new BasementAgent(new AgentID("BasementAgent"),12);
 /**
 
 14 2.2. Developing and executing a first agent
 
 * Execute the agents
 */
-		enviroAgent.start();
+		living_agent.start();
                 
 		agent_light.start();
                 agent_ac.start();
                 agent_hum.start();
                 agent_blin.start();
                 agent_heat.start();
+                
+                
+                basement_agent.start();
+                agent_gen.start();
                 
 
 		} catch (Exception e) {logger.error("Error " + e.getMessage());}
