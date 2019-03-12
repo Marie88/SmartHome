@@ -96,3 +96,25 @@ IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLE
 IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"0beb1be4-a194-4a89-81a4-82c2a88ce1ca"]
 IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"8b835570-1ae8-40ac-827c-0d95babbc106"]
 IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"806939c5-3bb6-4d37-b3e3-b6f2c50a1ed9"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.ClientDelegate - Idle timeout is zero. Heartbeats are disabled
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"52d8b066-c9e5-41a0-ab3a-15d5ff4a3c09"] ch=1 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"52d8b066-c9e5-41a0-ab3a-15d5ff4a3c09"] ch=1 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"31a65709-cc3c-4954-8181-7a0959821646"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"3ae1061d-b402-439f-92e5-4b8871fb95f3"] ch=5 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"3ae1061d-b402-439f-92e5-4b8871fb95f3"] ch=5 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"28bbf9e5-6f7d-4b36-9ae1-c625de96fcc0"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"52d8b066-c9e5-41a0-ab3a-15d5ff4a3c09"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"3ae1061d-b402-439f-92e5-4b8871fb95f3"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.ClientDelegate - Idle timeout is zero. Heartbeats are disabled
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"098b0dee-cd8c-4736-b182-583bb96e661a"] ch=3 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"21178311-5e66-4199-a4ef-e48af9a92f7d"] ch=1 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"21178311-5e66-4199-a4ef-e48af9a92f7d"] ch=1 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"098b0dee-cd8c-4736-b182-583bb96e661a"] ch=3 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"4fb7edcd-aa2b-42c5-b6b1-80408ecbd0b5"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"916b3576-0d2e-431b-b1c5-01a375837216"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5f4d0634-59d9-4f8e-9e47-718a9980f17b"] ch=5 id=1 MessageReject(transfers={[9, 9]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5f4d0634-59d9-4f8e-9e47-718a9980f17b"] ch=5 id=2 MessageReject(transfers={[10, 10]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5f4d0634-59d9-4f8e-9e47-718a9980f17b"] ch=5 id=3 MessageReject(transfers={[11, 11]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - UNHANDLED: [ssn:"5f4d0634-59d9-4f8e-9e47-718a9980f17b"] ch=5 id=4 MessageReject(transfers={[12, 12]}, code=UNROUTABLE, text=Unroutable)
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"098b0dee-cd8c-4736-b182-583bb96e661a"]
+IoReceiver - localhost/127.0.0.1:5672 WARN  transport.SessionDelegate - CLOSED: [ssn:"21178311-5e66-4199-a4ef-e48af9a92f7d"]
