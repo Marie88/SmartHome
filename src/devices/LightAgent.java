@@ -7,13 +7,13 @@ package devices;
 
 import es.upv.dsic.gti_ia.core.ACLMessage;
 import es.upv.dsic.gti_ia.core.AgentID;
-import es.upv.dsic.gti_ia.core.BaseAgent;
+import es.upv.dsic.gti_ia.core.SingleAgent;
 
 /**
  *
  * @author admin
  */
-public class LightAgent extends BaseAgent{
+public class LightAgent extends SingleAgent{
     
     private int currentLight;
     private boolean active;
@@ -24,13 +24,26 @@ public class LightAgent extends BaseAgent{
         this.active = false;
     }
     
+     public void onMessage(ACLMessage msg){
+        System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
+    }
+    
     public void execute(){
 	System.out.println("Hi! I'm agent "+this.getName()+" and I start my execution");
 
         ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
-	msg.setSender(this.getAid());
-	msg.addReceiver(new AgentID("LivingRoomAgent"));
-	msg.setContent("Hi! I'm Light agent and the current light is "+this.currentLight+"%");
-	this.send(msg);
+        ACLMessage msg2=new ACLMessage(ACLMessage.INFORM);
+ 	msg.setSender(this.getAid());
+ 	msg.addReceiver(new AgentID("LivingRoomAgent"));
+ 	msg.setContent("Hi! I'm Light agent and the current light is "+this.currentLight+"%");
+ 	this.send(msg);
+        try {
+            msg2=this.receiveACLMessage();
+            this.send(msg2);
+        } catch (InterruptedException ex) {
+            
+        }
+        
+        
     }
 }

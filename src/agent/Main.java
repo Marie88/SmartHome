@@ -19,7 +19,7 @@ public static void main(String[] args) {
 /**
  * Setting the Logger
  */
-	DOMConfigurator.configure("configuration/loggin.xml");
+        DOMConfigurator.configure("configuration/loggin.xml");
 	Logger logger = Logger.getLogger(Main.class);
 
 /**
