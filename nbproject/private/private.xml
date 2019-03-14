@@ -3,16 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/ACAgent.java</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/agent/Main.java</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/HeaterAgent.java</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/LightAgent.java</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/rooms/LivingRoomAgent.java</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/BlindsAgent.java</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/HumidityAgent.java</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/GeneratorAgent.java</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/devices/WindowAgent.java</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/SmartHouse/src/rooms/BasementAgent.java</file>
+            <file>file:/C:/Users/Maria/eclipse-workspace/SmartHome/src/devices/LightAgent.java</file>
+            <file>file:/C:/Users/Maria/eclipse-workspace/SmartHome/src/rooms/LivingRoomAgent.java</file>
+            <file>file:/C:/Users/Maria/eclipse-workspace/SmartHome/src/agent/Main.java</file>
         </group>
     </open-files>
 </project-private>
