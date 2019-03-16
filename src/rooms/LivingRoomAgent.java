@@ -15,6 +15,11 @@ import java.util.Random;
  *
  * @author admin
  */
+
+// need Tracker for season , weather , time of day
+enum DeviceAgentIDs{
+    ACAgent,LightAgent,HumidityAgent,BlindsAgent,HeaterAgent;
+}
 public class LivingRoomAgent extends SingleAgent {
     
     private int temp;
@@ -22,7 +27,10 @@ public class LivingRoomAgent extends SingleAgent {
     private int humidity;
     
     boolean gotMsg = false;
-    int[] valuesArray={60,70,56,33,67};
+    
+    int[] tempRange = {12,10,22,15,18,20,25,30}; //18-25 oC OK
+    int[] lightRange ={20,30,40,50,60,10,20,15};// >40% OK
+    int[] humRange =  {10,20,30,50,60,70,80,65};// <50% OK
     
     public LivingRoomAgent(AgentID aid,int temp,int light,int humidity) throws Exception {
         super(aid);
@@ -41,19 +49,47 @@ public class LivingRoomAgent extends SingleAgent {
     }
      public void execute(){
         System.out.println("Hi! I'm agent "+this.getName()+" and I start my execution");
-        ACLMessage msg = new ACLMessage();
-        ACLMessage send=new ACLMessage();
+      
          try {
-                send.setReceiver(new AgentID("LightAgent"));
-                send.setSender(this.getAid());
                 while(true){
-                    sleep(3000);
-                    send.setContent("Fiat Lux by "+getRandomFromArray(valuesArray)+" %");
-                    this.send(send);
+                    sleep(5000);
+                    broadcast();
                 }
                
              } 
          catch (InterruptedException e) { this.gotMsg = false;   e.printStackTrace(); }
-         
+ 
+    }
+     
+     public  void broadcast(){
+       for(DeviceAgentIDs agentID : DeviceAgentIDs.values()){
+           
+            ACLMessage msg = new ACLMessage();
+            msg.setReceiver(new AgentID(""+agentID));
+            msg.setSender(this.getAid());
+            switch(agentID){
+                
+                case LightAgent:
+                    msg.setContent(""+getRandomFromArray(lightRange));
+                    break;
+                case ACAgent:
+                    msg.setContent(""+getRandomFromArray(tempRange));
+                    break;
+                case HumidityAgent:
+                    msg.setContent(""+getRandomFromArray(humRange));
+                    break;
+                case BlindsAgent:
+                     msg.setContent(""+getRandomFromArray(humRange));
+                    break;
+                case HeaterAgent:
+                     msg.setContent(""+getRandomFromArray(tempRange));
+                    break;
+                default:
+                    break;
+                
+            }
+            
+           this.send(msg);
+       }  
     }
 }

@@ -25,6 +25,7 @@ public class WindowAgent extends BaseAgent{
         this.currentTemp = temp;
     }
     public void init(){this.active = true;}
+    
     public void execute(){
 	System.out.println("Hi! I'm agent "+this.getName()+" and I start my execution");
 
