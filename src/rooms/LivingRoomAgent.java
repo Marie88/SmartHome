@@ -18,7 +18,7 @@ import java.util.Random;
 
 // need Tracker for season , weather , time of day
 enum DeviceAgentIDs{
-    ACAgent,LightAgent,HumidityAgent,BlindsAgent,HeaterAgent;
+    ACAgent,LightAgent,HumidityAgent,BlindsAgent,HeaterAgent,WindowAgent;
 }
 public class LivingRoomAgent extends SingleAgent {
     
@@ -83,6 +83,9 @@ public class LivingRoomAgent extends SingleAgent {
                     break;
                 case HeaterAgent:
                      msg.setContent(""+getRandomFromArray(tempRange));
+                    break;
+                case WindowAgent:
+                    msg.setContent(""+getRandomFromArray(tempRange)+","+getRandomFromArray(humRange));
                     break;
                 default:
                     break;

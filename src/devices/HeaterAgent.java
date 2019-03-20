@@ -26,11 +26,12 @@ public class HeaterAgent extends SingleAgent{
     
      public void onMessage(ACLMessage msg){
         //System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
-        if(Integer.parseInt(msg.getContent())>18){
+        currentTemp = Integer.parseInt(msg.getContent());
+        if(currentTemp>18){
             System.out.println("Hi! I'm Heater agent and the current temperature is "+this.currentTemp);
         }
         else{
-            System.out.println("Hi! I'm Heater agent, current temperature is "+msg.getContent()+" and I turned on the heater");
+            System.out.println("Hi! I'm Heater agent, current temperature is "+this.currentTemp+" and I turned on the heater");
             //logic to modify current parameter in living room
         }
         

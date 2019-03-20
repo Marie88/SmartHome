@@ -6,6 +6,7 @@ import devices.GeneratorAgent;
 import devices.HeaterAgent;
 import devices.HumidityAgent;
 import devices.LightAgent;
+import devices.WindowAgent;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import es.upv.dsic.gti_ia.core.AgentID;
@@ -39,6 +40,7 @@ public static void main(String[] args) {
                 BlindsAgent agent_blin = new BlindsAgent(new AgentID("BlindsAgent"),50);
                 HeaterAgent agent_heat = new HeaterAgent(new AgentID("HeaterAgent"),25);
                 GeneratorAgent agent_gen = new GeneratorAgent(new AgentID("GeneratorAgent"),12);
+                WindowAgent agent_win = new WindowAgent(new AgentID("WindowAgent"),25,30);
 /**
  * Instantiating a room environment agent
 */
@@ -47,7 +49,7 @@ public static void main(String[] args) {
                 BasementAgent basement_agent = new BasementAgent(new AgentID("BasementAgent"),12);
 /**
 
-14 2.2. Developing and executing a first agent
+
 
 * Execute the agents
 */
@@ -58,7 +60,7 @@ public static void main(String[] args) {
                 agent_hum.start();
                 agent_blin.start();
                 agent_heat.start();
-                
+                agent_win.start();
                 
                 basement_agent.start();
                 agent_gen.start();

@@ -26,11 +26,13 @@ public class LightAgent extends SingleAgent{
     
      public void onMessage(ACLMessage msg){
         //System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
-        if(Integer.parseInt(msg.getContent())>40){
+        currentLight = Integer.parseInt(msg.getContent());
+        
+        if(currentLight>40){
             System.out.println("Hi! I'm Light agent and the current light is "+this.currentLight+"%");
         }
         else{
-            System.out.println("Hi! I'm Light agent, current luminosity is "+msg.getContent()+" % and I turned on the lights");
+            System.out.println("Hi! I'm Light agent, current luminosity is "+this.currentLight+" % and I turned on the lights");
             //logic to modify current parameter in living room
         }
         

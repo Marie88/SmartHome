@@ -26,11 +26,12 @@ public class HumidityAgent extends SingleAgent{
     
       public void onMessage(ACLMessage msg){
         //System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
-        if(Integer.parseInt(msg.getContent())<50){
+        currentHum = Integer.parseInt(msg.getContent());
+        if(currentHum<50){
             System.out.println("Hi! I'm Humidity agent and the current humidity is "+this.currentHum);
         }
         else{
-            System.out.println("Hi! I'm Humidity agent, current humidity is "+msg.getContent()+" % and I turned on the humidifier");
+            System.out.println("Hi! I'm Humidity agent, current humidity is "+this.currentHum+" % and I turned on the humidifier");
             //logic to modify current parameter in living room
         }
         
