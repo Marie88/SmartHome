@@ -13,7 +13,7 @@ import es.upv.dsic.gti_ia.core.SingleAgent;
  * @author admin
  */
 public class HumidityAgent extends SingleAgent{
-    private int currentHum;
+    private double currentHum;
     
     private boolean active;
     
@@ -26,7 +26,7 @@ public class HumidityAgent extends SingleAgent{
     
       public void onMessage(ACLMessage msg){
         //System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
-        currentHum = Integer.parseInt(msg.getContent());
+        currentHum = Double.parseDouble(msg.getContent());
         if(currentHum<50){
             System.out.println("Hi! I'm Humidity agent and the current humidity is "+this.currentHum);
         }

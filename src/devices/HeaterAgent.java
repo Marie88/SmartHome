@@ -14,7 +14,7 @@ import es.upv.dsic.gti_ia.core.SingleAgent;
  */
 public class HeaterAgent extends SingleAgent{
       
-    private int currentTemp;
+    private double currentTemp;
     private boolean active;
     
     public HeaterAgent(AgentID aid,int temp) throws Exception {
@@ -26,7 +26,7 @@ public class HeaterAgent extends SingleAgent{
     
      public void onMessage(ACLMessage msg){
         //System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
-        currentTemp = Integer.parseInt(msg.getContent());
+        currentTemp = Double.parseDouble(msg.getContent());
         if(currentTemp>18){
             System.out.println("Hi! I'm Heater agent and the current temperature is "+this.currentTemp);
         }

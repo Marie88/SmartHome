@@ -14,8 +14,8 @@ import es.upv.dsic.gti_ia.core.SingleAgent;
  */
 
 public class WindowAgent extends SingleAgent{
-    private int currentTemp;
-    private int currentHum;
+    private double currentTemp;
+    private double currentHum;
     
     private boolean active;
     
@@ -30,8 +30,8 @@ public class WindowAgent extends SingleAgent{
         //System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
         
         String[] params = msg.getContent().split(",");
-        currentTemp = Integer.parseInt(params[0]);
-        currentHum = Integer.parseInt(params[1]);
+        currentTemp = Double.parseDouble(params[0]);
+        currentHum = Double.parseDouble(params[1]);
         
         if(currentTemp < 25 && currentHum < 50){
             System.out.println("Hi! I'm Window agent and the current temperature is "+this.currentTemp+" and current humidity is "+this.currentHum+"%");
