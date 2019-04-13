@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import es.upv.dsic.gti_ia.core.AgentID;
 import es.upv.dsic.gti_ia.core.AgentsConnection;
+import house.Room;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -47,23 +48,23 @@ public class Main {
         myObj.close();
 
         getlines(seedData(season));
-
+        Room room = new Room(12,100,4);
         try {
             /**
              * Instantiating device agents
              */
-            LightAgent agent_light = new LightAgent(new AgentID("LightAgent"), 50);
-            ACAgent agent_ac = new ACAgent(new AgentID("ACAgent"), 25);
-            HumidityAgent agent_hum = new HumidityAgent(new AgentID("HumidityAgent"), 30);
-            BlindsAgent agent_blin = new BlindsAgent(new AgentID("BlindsAgent"), 50);
-            HeaterAgent agent_heat = new HeaterAgent(new AgentID("HeaterAgent"), 25);
-            GeneratorAgent agent_gen = new GeneratorAgent(new AgentID("GeneratorAgent"), 12);
-            WindowAgent agent_win = new WindowAgent(new AgentID("WindowAgent"), 25, 30);
+            LightAgent agent_light = new LightAgent(new AgentID("LightAgent"));
+            ACAgent agent_ac = new ACAgent(new AgentID("ACAgent"));
+            HumidityAgent agent_hum = new HumidityAgent(new AgentID("HumidityAgent"));
+            BlindsAgent agent_blin = new BlindsAgent(new AgentID("BlindsAgent"));
+            HeaterAgent agent_heat = new HeaterAgent(new AgentID("HeaterAgent"));
+            GeneratorAgent agent_gen = new GeneratorAgent(new AgentID("GeneratorAgent"),40);
+            WindowAgent agent_win = new WindowAgent(new AgentID("WindowAgent"));
             /**
              * Instantiating a room environment agent
              */
             //Consumer consumerAgent = new Consumer(new AgentID("Consumer"));
-            LivingRoomAgent living_agent = new LivingRoomAgent(new AgentID("LivingRoomAgent"), 25, 50, 30);
+            LivingRoomAgent living_agent = new LivingRoomAgent(new AgentID("LivingRoomAgent"), room,season);
             BasementAgent basement_agent = new BasementAgent(new AgentID("BasementAgent"), 12);
             /**
              *
@@ -80,8 +81,8 @@ public class Main {
             agent_heat.start();
             agent_win.start();
 
-            basement_agent.start();
-            agent_gen.start();
+           // basement_agent.start();
+           // agent_gen.start();
 
         } catch (Exception e) {
             logger.error("Error " + e.getMessage());
@@ -131,7 +132,7 @@ public class Main {
     public static String[] split(String line) {
         String[] list;
         list = line.split(";");
-        System.out.println(list[5] + " " + list[6]);
+        //System.out.println(list[5] + " " + list[6]);
         return list;
 
     }

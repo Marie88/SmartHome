@@ -13,25 +13,24 @@ import es.upv.dsic.gti_ia.core.SingleAgent;
  * @author admin
  */
 public class HumidityAgent extends SingleAgent{
-    private double currentHum;
-    
+  
     private boolean active;
     
-    public HumidityAgent(AgentID aid,int hum) throws Exception {
+    public HumidityAgent(AgentID aid) throws Exception {
         super(aid);
-        this.currentHum = hum;
+        
     }
     
     public void init(){this.active = true;}
     
       public void onMessage(ACLMessage msg){
-        //System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
-        currentHum = Double.parseDouble(msg.getContent());
+      
+        double currentHum = Double.parseDouble(msg.getContent());
         if(currentHum<50){
-            System.out.println("Hi! I'm Humidity agent and the current humidity is "+this.currentHum);
+            System.out.println("Hi! I'm Humidity agent and the current humidity is "+currentHum);
         }
         else{
-            System.out.println("Hi! I'm Humidity agent, current humidity is "+this.currentHum+" % and I turned on the humidifier");
+            System.out.println("Hi! I'm Humidity agent, current humidity is "+currentHum+" % and I turned on the humidifier");
             //logic to modify current parameter in living room
         }
         
@@ -40,13 +39,9 @@ public class HumidityAgent extends SingleAgent{
     public void execute(){
 	System.out.println("Hi! I'm agent "+this.getName()+" and I start my execution");
 
-        ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
         ACLMessage msg2 = new ACLMessage(ACLMessage.INFORM);
-	msg.setSender(this.getAid());
-	msg.addReceiver(new AgentID("LivingRoomAgent"));
-	msg.setContent("Hi! I'm Humidity agent and current humidity is "+this.currentHum+"%");
-	this.send(msg);
-             try {
+
+        try {
             msg2=this.receiveACLMessage();
             this.send(msg2);
         } catch (InterruptedException ex) {

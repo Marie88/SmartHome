@@ -10,6 +10,7 @@ import static agent.Main.season;
 import es.upv.dsic.gti_ia.core.ACLMessage;
 import es.upv.dsic.gti_ia.core.AgentID;
 import es.upv.dsic.gti_ia.core.SingleAgent;
+import house.Room;
 import java.io.InputStream;
 import static java.lang.Thread.sleep;
 import java.util.Random;
@@ -27,23 +28,21 @@ enum DeviceAgentIDs {
 
 public class LivingRoomAgent extends SingleAgent {
 
-    private int temp;
-    private int light;
-    private int humidity;
+    Room livingroom;
+    String season;
+    
     private int iterator=0;
 
     boolean gotMsg = false;
 
-    int[] tempRange = {12, 10, 22, 15, 18, 20, 25, 30}; //18-25 oC OK
+   // int[] tempRange = {12, 10, 22, 15, 18, 20, 25, 30}; //18-25 oC OK
     int[] lightRange = {20, 30, 40, 50, 60, 10, 20, 15};// >40% OK
-    int[] humRange = {10, 20, 30, 50, 60, 70, 80, 65};// <50% OK
+    //int[] humRange = {10, 20, 30, 50, 60, 70, 80, 65};// <50% OK
 
-    public LivingRoomAgent(AgentID aid, int temp, int light, int humidity) throws Exception {
+    public LivingRoomAgent(AgentID aid, Room room,String season) throws Exception {
         super(aid);
-        this.temp = temp;
-        this.light = light;
-        this.humidity = humidity;
-
+        this.livingroom = room;
+        this.season = season;
     }
 
     @Override
@@ -90,22 +89,38 @@ public class LivingRoomAgent extends SingleAgent {
             switch (agentID) {
 
                 case LightAgent:
-                    msg.setContent("" + getRandomFromArray(lightRange));
+                    msg.setContent("" + getRandomFromArray(lightRange)); //need incident solar radiation cvs
                     break;
-                case ACAgent:
-                    msg.setContent("" + Double.parseDouble(getValuesFromSeedData(iterator)[5]));
+                case ACAgent:{
+                    double outTemp = Double.parseDouble(getValuesFromSeedData(iterator)[5]);
+                    double current = livingroom.modelTemp(outTemp);
+                    msg.setContent(""+current);
+                }
                     break;
-                case HumidityAgent:
-                    msg.setContent("" + Double.parseDouble(getValuesFromSeedData(iterator)[6]));
+                case HumidityAgent:{
+                    double outHum = Double.parseDouble(getValuesFromSeedData(iterator)[6]);
+                    double outTemp = Double.parseDouble(getValuesFromSeedData(iterator)[5]);
+                    double current = livingroom.modelHumidity(outHum,outTemp);
+                   
+                    msg.setContent("" + current);
+                }
                     break;
                 case BlindsAgent:
                     msg.setContent("" + Double.parseDouble(getValuesFromSeedData(iterator)[6]));
                     break;
-                case HeaterAgent:
-                    msg.setContent("" + Double.parseDouble(getValuesFromSeedData(iterator)[5]));
+                case HeaterAgent:{
+                    double outTemp = Double.parseDouble(getValuesFromSeedData(iterator)[5]);
+                    double current = livingroom.modelTemp(outTemp);
+                    msg.setContent(""+current);
+                }
                     break;
-                case WindowAgent:
-                    msg.setContent("" + Double.parseDouble(getValuesFromSeedData(iterator)[5]) + "," + Double.parseDouble(getValuesFromSeedData(iterator)[6]));
+                case WindowAgent:{
+                    double outHum = Double.parseDouble(getValuesFromSeedData(iterator)[6]);
+                    double outTemp = Double.parseDouble(getValuesFromSeedData(iterator)[5]);
+                    double current = livingroom.modelHumidity(outHum,outTemp);
+                   
+                    msg.setContent("" + current);
+                }
                     break;
                 default:
                     break;

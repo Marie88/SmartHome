@@ -14,15 +14,12 @@ import es.upv.dsic.gti_ia.core.SingleAgent;
  */
 
 public class WindowAgent extends SingleAgent{
-    private double currentTemp;
-    private double currentHum;
-    
+   
     private boolean active;
     
-    public WindowAgent(AgentID aid,int temp,int hum) throws Exception {
+    public WindowAgent(AgentID aid) throws Exception {
         super(aid);
-        this.currentHum = hum;
-        this.currentTemp = temp;
+       
     }
     public void init(){this.active = true;}
     
@@ -30,14 +27,14 @@ public class WindowAgent extends SingleAgent{
         //System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
         
         String[] params = msg.getContent().split(",");
-        currentTemp = Double.parseDouble(params[0]);
-        currentHum = Double.parseDouble(params[1]);
+        double currentTemp = Double.parseDouble(params[0]);
+        double currentHum = Double.parseDouble(params[1]);
         
         if(currentTemp < 25 && currentHum < 50){
-            System.out.println("Hi! I'm Window agent and the current temperature is "+this.currentTemp+" and current humidity is "+this.currentHum+"%");
+            System.out.println("Hi! I'm Window agent and the current temperature is "+currentTemp+" and current humidity is "+currentHum+"%");
         }
         else{
-            System.out.println("Hi! I'm Window agent, current temperature is "+this.currentTemp+" and current humidity is "+this.currentHum+"% and i opened the window");
+            System.out.println("Hi! I'm Window agent, current temperature is "+currentTemp+" and current humidity is "+currentHum+"% and i opened the window");
             //logic to modify current parameter in living room
         }
         
@@ -46,15 +43,10 @@ public class WindowAgent extends SingleAgent{
     public void execute(){
 	System.out.println("Hi! I'm agent "+this.getName()+" and I start my execution");
 
-        ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
+     
         ACLMessage msg2 = new ACLMessage(ACLMessage.INFORM);
 
-	msg.setSender(this.getAid());
-	msg.addReceiver(new AgentID("LivingRoomAgent"));
-	msg.setContent("Hi! I'm Window agent and the current temperature is "+this.currentTemp+" and current humidity is "+this.currentHum+"%");
-	this.send(msg);
-        
-            try {
+	try {
                 msg2=this.receiveACLMessage();
                 this.send(msg2);
             } catch (InterruptedException ex) {
