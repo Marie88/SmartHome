@@ -25,12 +25,12 @@ public class BlindsAgent extends SingleAgent{
     
     public void onMessage(ACLMessage msg){
         //System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
-        double currentLight = Integer.parseInt(msg.getContent());
-        if(currentLight>40){
-            System.out.println("Hi! I'm Blinds agent and the current light is "+currentLight+"%");
+        double currentLight =Double.parseDouble(msg.getContent());
+        if(currentLight<2000){
+            System.out.println("Hi! I'm Blinds agent and the current luminosity is "+currentLight+" lux");
         }
         else{
-            System.out.println("Hi! I'm Blinds agent, current luminosity is "+currentLight+" % and I opened the blinds"); // add time of day
+            System.out.println("Hi! I'm Blinds agent, current luminosity is "+currentLight+" lux and I closed the blinds"); 
             //logic to modify current parameter in living room
         }
         

@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,7 +10,7 @@ package house;
  *
  * @author admin
  * 
- * 
+ *  BUILDING MODEL  WITH SOURCES: 
  * 
  * 
  *       inner ambient temperature : T = (convHTC*wallArea(outTemp - wallTemp) ) / this.isolationIndex
@@ -21,17 +22,27 @@ package house;
         * http://help.vabi.nl/elements/en/index.html#!Documents/absorptioncoefficients.htm
         * 
                 absorbCoef = 0.30 (white surface bricks )
-                
+        
+        * 
+        * 
+        * 
         inner ambient humidity:     H = (vaporDensity/satVapourDensity)*100  ----->the saturation vapour density is determined by volume of the room and its a constant
                                                     always current vapour density <=saturation vapour density
         
                                                     saturation vapour density  = 6.11*10(7.5*T / 237.3*T)    T--air temperature
                                                     actual vapour density      = 6.11*10(7.5*Td / 237.3*Td)  Td-dew point
         
-                                                    
-        inner luminosity :          I = [ incidentSolarRad/ exp ( atmoCoef * sin(h)  ) ] * noOfWindows
+                                                     from https://www.wikihow.com/Calculate-Humidity
+                                                     
+                                                     * 
+        inner luminosity :         direct normal irradiation  I = [ incidentSolarRad/ exp ( atmoCoef * sin(h)  ) ] * noOfWindows
+        * https://www.engineeringtoolbox.com/light-level-rooms-d_708.html
+        * 
+        *    E = outLum / wallArea  Illuminance is flux over area of the room
+        * 
+        * 
         https://en.wikipedia.org/wiki/Air_mass_(solar_energy)
-        from https://www.wikihow.com/Calculate-Humidity
+       
  */
 public class Room {
     
@@ -39,7 +50,7 @@ public class Room {
     double humidity;
     double luminosity;
     
-    int wallArea; //12 m2
+    int area ; //15 m2
     double thermalConductivity; // 2.8 W/m*K
    // double wallThickness = 0.2; //m
     int wallTemp; // 
@@ -47,17 +58,16 @@ public class Room {
     int convHTC = 15; //   W/m2*K    //convective heat transfer coefficient
     
     int noOfWindows;
-    double h = 1.5707; //sun elevation
-    int incidentSolarRad; //need in cvs
+    double h = 22.5; //sun elevation
+    int incidentSolarRad; //need in cvs //Measured in kWh/m2/day onto a horizontal surface:
     double atmoCoef = 1.5; // AM1.5 
     double absorbCoef=0.3;
     
     public Room(){}
-    public Room(int wallArea,int isolationIndex,int noOfWindows){
-        this.wallArea = wallArea;
+    public Room(int area,int isolationIndex,int noOfWindows){
+        this.area = area;
         this.isolationIndex = isolationIndex;
         this.noOfWindows = noOfWindows;
-       
         this.incidentSolarRad = 0;
     }
     
@@ -70,7 +80,7 @@ public class Room {
     }
     public double modelTemp(double outTemp){
         double wall = modelWallTemp(outTemp);
-        this.temperature = Math.round((convHTC*this.wallArea*(outTemp - wallTemp) ) / this.isolationIndex);
+        this.temperature = Math.round((convHTC*this.area*(outTemp - wallTemp) ) / this.isolationIndex);
         return temperature;
     }
 
@@ -85,9 +95,8 @@ public class Room {
     }
     
     
-    public double modelLuminosity(double incidentSolarRad){
-       // I = [ incidentSolarRad/ exp ( atmoCoef * sin(h)  ) ] * noOfWindows
-       this.luminosity = Math.round(incidentSolarRad/Math.exp(this.atmoCoef*Math.sin(h)));
+    public double modelLuminosity(double outLum){
+       this.luminosity = Math.round(outLum/this.area);
        return luminosity;
     }
     

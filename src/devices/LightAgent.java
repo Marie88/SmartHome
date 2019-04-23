@@ -23,14 +23,24 @@ public class LightAgent extends SingleAgent{
     }
     
      public void onMessage(ACLMessage msg){
-      
-        double currentLight = Integer.parseInt(msg.getContent());
-        
-        if(currentLight>40){
-            System.out.println("Hi! I'm Light agent and the current light is "+currentLight+"%");
+      /*
+          double currentHum = Double.parseDouble(msg.getContent());
+        if(currentHum<50){
+            System.out.println("Hi! I'm Humidity agent and the current humidity is "+currentHum);
         }
         else{
-            System.out.println("Hi! I'm Light agent, current luminosity is "+currentLight+" % and I turned on the lights");
+            System.out.println("Hi! I'm Humidity agent, current humidity is "+currentHum+" % and I turned on the humidifier");
+            //logic to modify current parameter in living room
+        }
+        
+         */
+        double currentLight = Double.parseDouble(msg.getContent());
+        
+        if(currentLight>200){
+            System.out.println("Hi! I'm Light agent and the current light is "+currentLight+"lux");
+        }
+        else{
+            System.out.println("Hi! I'm Light agent, current luminosity is "+currentLight+" lux and I turned on the lights");
             //logic to modify current parameter in living room
         }
         

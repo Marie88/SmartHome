@@ -92,24 +92,24 @@ public class Main {
     public static BufferedReader seedData(String period) {
 
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-        InputStream is = classloader.getResourceAsStream("resources/AutumnBaselWithHumidity.csv");
+        InputStream is = classloader.getResourceAsStream("resources/autumn.csv");
         if (period.startsWith("aut")) {
-            is = classloader.getResourceAsStream("resources/AutumnBaselWithHumidity.csv");
+            is = classloader.getResourceAsStream("resources/autumn.csv");
             return new BufferedReader(new InputStreamReader(is));
         }
 
         if (period.startsWith("spr")) {
-            is = classloader.getResourceAsStream("resources/SpringBaselWithHumidity.csv");
+            is = classloader.getResourceAsStream("resources/spring.csv");
             return new BufferedReader(new InputStreamReader(is));
         }
 
         if (period.startsWith("sum")) {
-            is = classloader.getResourceAsStream("resources/SummerBaselWithHumidity.csv");
+            is = classloader.getResourceAsStream("resources/summer.csv");
             return new BufferedReader(new InputStreamReader(is));
         }
 
         if (period.startsWith("wint")) {
-            is = classloader.getResourceAsStream("resources/WinterBaselWithHumidity.csv");
+            is = classloader.getResourceAsStream("resources/winter.csv");
             return new BufferedReader(new InputStreamReader(is));
         }
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
@@ -120,6 +120,7 @@ public class Main {
         seedData(season);
         return new BufferedReader(new InputStreamReader(is));
     }
+            
 
     public static void getlines(BufferedReader fin) throws IOException {
         String line;

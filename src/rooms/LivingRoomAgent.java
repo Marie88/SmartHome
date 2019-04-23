@@ -89,34 +89,41 @@ public class LivingRoomAgent extends SingleAgent {
             switch (agentID) {
 
                 case LightAgent:
-                    msg.setContent("" + getRandomFromArray(lightRange)); //need incident solar radiation cvs
+                {
+                    double outLum = Double.parseDouble(getValuesFromSeedData(iterator)[6]);
+                    double current = livingroom.modelLuminosity(outLum);
+                    msg.setContent(""+current); 
+                }
                     break;
                 case ACAgent:{
-                    double outTemp = Double.parseDouble(getValuesFromSeedData(iterator)[5]);
+                    double outTemp = Double.parseDouble(getValuesFromSeedData(iterator)[7]);
                     double current = livingroom.modelTemp(outTemp);
                     msg.setContent(""+current);
                 }
                     break;
                 case HumidityAgent:{
-                    double outHum = Double.parseDouble(getValuesFromSeedData(iterator)[6]);
-                    double outTemp = Double.parseDouble(getValuesFromSeedData(iterator)[5]);
+                    double outHum = Double.parseDouble(getValuesFromSeedData(iterator)[8]);
+                    double outTemp = Double.parseDouble(getValuesFromSeedData(iterator)[7]);
                     double current = livingroom.modelHumidity(outHum,outTemp);
                    
                     msg.setContent("" + current);
                 }
                     break;
-                case BlindsAgent:
-                    msg.setContent("" + Double.parseDouble(getValuesFromSeedData(iterator)[6]));
+                case BlindsAgent:{
+                    double outLum = Double.parseDouble(getValuesFromSeedData(iterator)[6]);
+                    double current = livingroom.modelLuminosity(outLum);
+                    msg.setContent(""+current); 
+                }
                     break;
                 case HeaterAgent:{
-                    double outTemp = Double.parseDouble(getValuesFromSeedData(iterator)[5]);
+                    double outTemp = Double.parseDouble(getValuesFromSeedData(iterator)[7]);
                     double current = livingroom.modelTemp(outTemp);
                     msg.setContent(""+current);
                 }
                     break;
                 case WindowAgent:{
-                    double outHum = Double.parseDouble(getValuesFromSeedData(iterator)[6]);
-                    double outTemp = Double.parseDouble(getValuesFromSeedData(iterator)[5]);
+                    double outHum = Double.parseDouble(getValuesFromSeedData(iterator)[8]);
+                    double outTemp = Double.parseDouble(getValuesFromSeedData(iterator)[7]);
                     double current = livingroom.modelHumidity(outHum,outTemp);
                    
                     msg.setContent("" + current);
