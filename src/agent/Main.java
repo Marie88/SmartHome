@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import es.upv.dsic.gti_ia.core.AgentID;
 import es.upv.dsic.gti_ia.core.AgentsConnection;
+import house.*;
 import house.Room;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,6 +19,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import static java.lang.System.in;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
@@ -48,7 +50,20 @@ public class Main {
         myObj.close();
 
         getlines(seedData(season));
-        Room room = new Room(12,100,4);
+        
+        AC ac=new AC(0,5);
+        Heater heat = new Heater(0,5);
+        Humidifier humid = new Humidifier(0,10);
+        Lights lights = new Lights(0,200);
+        Windows window = new Windows();
+        Blinds blin = new Blinds();
+        
+        HashMap<String,Device> devices= new HashMap<String,Device>();
+        
+        devices.put("AC",ac);devices.put("Heater",heat);devices.put("Humidifier",humid);
+        devices.put("Lights",lights);devices.put("Windows",window);devices.put("Blinds",blin);
+        
+        Room room = new Room(12,100,4,devices);
         try {
             /**
              * Instantiating device agents

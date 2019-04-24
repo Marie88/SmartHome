@@ -6,6 +6,9 @@
  */
 package house;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  *
  * @author admin
@@ -46,9 +49,12 @@ package house;
  */
 public class Room {
     
-    double temperature;
-    double humidity;
-    double luminosity;
+    public double temperature;
+    public double humidity;
+    public double luminosity;
+    
+    public static HashMap<String,Device> devices;
+    
     
     int area ; //15 m2
     double thermalConductivity; // 2.8 W/m*K
@@ -64,11 +70,12 @@ public class Room {
     double absorbCoef=0.3;
     
     public Room(){}
-    public Room(int area,int isolationIndex,int noOfWindows){
+    public Room(int area,int isolationIndex,int noOfWindows,HashMap<String,Device> devices){
         this.area = area;
         this.isolationIndex = isolationIndex;
         this.noOfWindows = noOfWindows;
         this.incidentSolarRad = 0;
+        this.devices = devices;
     }
     
     public double modelWallTemp(double outTemp){  
@@ -80,8 +87,8 @@ public class Room {
     }
     public double modelTemp(double outTemp){
         double wall = modelWallTemp(outTemp);
-        this.temperature = Math.round((convHTC*this.area*(outTemp - wallTemp) ) / this.isolationIndex);
-        return temperature;
+        return  Math.round((convHTC*this.area*(outTemp - wallTemp) ) / this.isolationIndex);
+        
     }
 
     
@@ -90,32 +97,21 @@ public class Room {
         double Tdp = Math.round(outTemp - ((100 - humidity) / 5));
         double vaporDensity = Math.round(6.11*10*(7.5*Tdp / 237.3*Tdp)); 
         double satVaporDensity = Math.round(6.11*10*(7.5*outTemp / 237.3*outTemp));
-        this.humidity = Math.round((vaporDensity/satVaporDensity)*100 );
-        return humidity;
+        return Math.round((vaporDensity/satVaporDensity)*100 );
+         
     }
     
     
     public double modelLuminosity(double outLum){
-       this.luminosity = Math.round(outLum/this.area);
-       return luminosity;
-    }
-    
-  
-    
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
-    }
-
-    public void setHumidity(double humidity) {
-        this.humidity = humidity;
-    }
-
-    public void setLuminosity(double luminosity) {
-        this.luminosity = luminosity;
+       return Math.round(outLum/this.area);
     }
 
     public void setIncidentSolarRad(int incidentSolarRad) {
         this.incidentSolarRad = incidentSolarRad;
+    }
+
+    public HashMap<String, Device> getDevices() {
+        return devices;
     }
     
 }

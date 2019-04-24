@@ -27,17 +27,16 @@ public class WindowAgent extends SingleAgent{
         //System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
         
         String[] params = msg.getContent().split(",");
-        double currentTemp = Double.parseDouble(params[0]);
-        double currentHum = Double.parseDouble(params[1]);
+        double currentTemp = Double.parseDouble(params[1]);
+        double currentHum = Double.parseDouble(params[2]);
         
-        if(currentTemp < 25 && currentHum < 50){
+        if((currentTemp < 25 && currentHum < 60) || !(params[0].startsWith("spr")|| params[0].startsWith("sum"))){
             System.out.println("Hi! I'm Window agent and the current temperature is "+currentTemp+" and current humidity is "+currentHum+"%");
         }
         else{
-            System.out.println("Hi! I'm Window agent, current temperature is "+currentTemp+" and current humidity is "+currentHum+"% and i opened the window");
-            //logic to modify current parameter in living room
+            System.out.println("Hi! I'm Window agent, current temperature is "+currentTemp+" and current humidity is "+currentHum+" % and i opened the window");
         }
-        
+      
     }
     
     public void execute(){

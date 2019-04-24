@@ -32,13 +32,18 @@ public class LivingRoomAgent extends SingleAgent {
     String season;
     
     private int iterator=0;
-
     boolean gotMsg = false;
 
-   // int[] tempRange = {12, 10, 22, 15, 18, 20, 25, 30}; //18-25 oC OK
-    int[] lightRange = {20, 30, 40, 50, 60, 10, 20, 15};// >40% OK
-    //int[] humRange = {10, 20, 30, 50, 60, 70, 80, 65};// <50% OK
-
+    double currentT;
+    double currentH;
+    double currentL;
+    
+    double externalT;
+    double externalH;
+    double externalL;
+    
+    
+     double t; double l; double h;
     public LivingRoomAgent(AgentID aid, Room room,String season) throws Exception {
         super(aid);
         this.livingroom = room;
@@ -48,6 +53,7 @@ public class LivingRoomAgent extends SingleAgent {
     @Override
     public void onMessage(ACLMessage msg) {
         System.out.println("Hi! I'm agent " + this.getName() + " and I've received the message: " + msg.getContent());
+     
     }
 
     public static int getRandomFromArray(int[] array) {
@@ -61,8 +67,9 @@ public class LivingRoomAgent extends SingleAgent {
 
     public void execute() {
         System.out.println("Hi! I'm agent " + this.getName() + " and I start my execution");
-
+      
         try {
+            
             while (true) {
                 sleep(5000);
                 if(iterator<167){
@@ -81,52 +88,71 @@ public class LivingRoomAgent extends SingleAgent {
     }
 
     public void broadcast(int iterator) {
+    
+             
+        this.externalH=Double.parseDouble(getValuesFromSeedData(iterator)[8]);
+        this.externalT=Double.parseDouble(getValuesFromSeedData(iterator)[7]);
+        this.externalL=Double.parseDouble(getValuesFromSeedData(iterator)[6]);
+        
+        this.currentH = livingroom.modelHumidity(externalT, externalH);
+        this.currentT = livingroom.modelTemp(externalT);
+        this.currentL = livingroom.modelLuminosity(externalL);
+        
+        
         for (DeviceAgentIDs agentID : DeviceAgentIDs.values()) {
 
             ACLMessage msg = new ACLMessage();
             msg.setReceiver(new AgentID("" + agentID));
             msg.setSender(this.getAid());
+            
             switch (agentID) {
 
                 case LightAgent:
                 {
-                    double outLum = Double.parseDouble(getValuesFromSeedData(iterator)[6]);
-                    double current = livingroom.modelLuminosity(outLum);
-                    msg.setContent(""+current); 
+                    livingroom.luminosity = currentL;
+                    if(Room.devices.get("Lights").isON()){
+                        
+                        livingroom.luminosity +=Room.devices.get("Lights").getEnergy();
+                         msg.setContent(""+livingroom.luminosity);
+                    }
+                    else{
+                         msg.setContent(""+livingroom.luminosity);  
+                    }
+                    
                 }
                     break;
                 case ACAgent:{
-                    double outTemp = Double.parseDouble(getValuesFromSeedData(iterator)[7]);
+                    double outTemp = this.currentT;//Double.parseDouble(getValuesFromSeedData(iterator)[7]);
                     double current = livingroom.modelTemp(outTemp);
-                    msg.setContent(""+current);
+                    msg.setContent(this.season+","+current);
                 }
                     break;
                 case HumidityAgent:{
-                    double outHum = Double.parseDouble(getValuesFromSeedData(iterator)[8]);
-                    double outTemp = Double.parseDouble(getValuesFromSeedData(iterator)[7]);
+                    double outHum = this.currentH;//Double.parseDouble(getValuesFromSeedData(iterator)[8]);
+                    double outTemp = this.currentT;//Double.parseDouble(getValuesFromSeedData(iterator)[7]);
                     double current = livingroom.modelHumidity(outHum,outTemp);
                    
-                    msg.setContent("" + current);
+                    msg.setContent(this.season+"," + current);
                 }
                     break;
                 case BlindsAgent:{
-                    double outLum = Double.parseDouble(getValuesFromSeedData(iterator)[6]);
+                    double outLum = this.currentL;//Double.parseDouble(getValuesFromSeedData(iterator)[6]);
                     double current = livingroom.modelLuminosity(outLum);
                     msg.setContent(""+current); 
                 }
                     break;
                 case HeaterAgent:{
-                    double outTemp = Double.parseDouble(getValuesFromSeedData(iterator)[7]);
+                    double outTemp = this.currentT;//Double.parseDouble(getValuesFromSeedData(iterator)[7]);
                     double current = livingroom.modelTemp(outTemp);
-                    msg.setContent(""+current);
+                    msg.setContent(this.season+","+current);
                 }
                     break;
                 case WindowAgent:{
-                    double outHum = Double.parseDouble(getValuesFromSeedData(iterator)[8]);
-                    double outTemp = Double.parseDouble(getValuesFromSeedData(iterator)[7]);
-                    double current = livingroom.modelHumidity(outHum,outTemp);
-                   
-                    msg.setContent("" + current);
+                    double outHum = this.currentH;//Double.parseDouble(getValuesFromSeedData(iterator)[8]);
+                    double outTemp = this.currentT;//Double.parseDouble(getValuesFromSeedData(iterator)[7]);
+                    double currHum = livingroom.modelHumidity(outHum,outTemp);
+                    double currTemp = livingroom.modelTemp(outTemp);
+                    msg.setContent(this.season+"," + currTemp+","+currHum);
                 }
                     break;
                 default:

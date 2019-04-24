@@ -12,7 +12,7 @@ package house;
 public class Blinds extends Device{
     
     public Blinds(){
-        super();
+        super(0,0);
     }
     @Override
     public void turnON() {
@@ -24,4 +24,18 @@ public class Blinds extends Device{
         Blinds.super.isON = false;//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    @Override
+    public boolean isON() {
+        return Blinds.super.isON;
+    }
+     @Override
+    public double getConsumption() {
+         return 0;
+    }
+
+    @Override
+    public double getEnergy() {
+       return 0;
+    }
+
 }

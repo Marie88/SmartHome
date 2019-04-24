@@ -25,8 +25,8 @@ public class ACAgent extends SingleAgent{
     
     public void onMessage(ACLMessage msg){
         //System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
-        double currentTemp = Double.parseDouble(msg.getContent()) ;
-        if(currentTemp<25){
+        double currentTemp = Double.parseDouble(msg.getContent().split(",")[1]);
+        if(currentTemp<27){
             System.out.println("Hi! I'm AC agent and the current temperature is "+currentTemp);
         }
         else{

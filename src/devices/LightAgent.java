@@ -8,6 +8,7 @@ package devices;
 import es.upv.dsic.gti_ia.core.ACLMessage;
 import es.upv.dsic.gti_ia.core.AgentID;
 import es.upv.dsic.gti_ia.core.SingleAgent;
+import house.Room;
 
 /**
  *
@@ -23,25 +24,23 @@ public class LightAgent extends SingleAgent{
     }
     
      public void onMessage(ACLMessage msg){
-      /*
-          double currentHum = Double.parseDouble(msg.getContent());
-        if(currentHum<50){
-            System.out.println("Hi! I'm Humidity agent and the current humidity is "+currentHum);
-        }
-        else{
-            System.out.println("Hi! I'm Humidity agent, current humidity is "+currentHum+" % and I turned on the humidifier");
-            //logic to modify current parameter in living room
-        }
-        
-         */
+   
         double currentLight = Double.parseDouble(msg.getContent());
+        //200-1000 lux
         
-        if(currentLight>200){
-            System.out.println("Hi! I'm Light agent and the current light is "+currentLight+"lux");
+        if((currentLight>=200 && currentLight<400 && Room.devices.get("Lights").isON())){
+            System.out.println("Hi! I'm Light agent and the current light is "+currentLight+"lux and the lights are on");
+        }
+        else if(currentLight>=400 && Room.devices.get("Lights").isON()){
+            System.out.println("Hi! I'm Light agent and the current light is "+currentLight+"lux and I turned off the lights");
+            Room.devices.get("Lights").turnOFF();
+        }
+        else if(currentLight>=400 && !Room.devices.get("Lights").isON()){
+             System.out.println("Hi! I'm Light agent and the current light is "+currentLight+"lux and the lights are off");
         }
         else{
             System.out.println("Hi! I'm Light agent, current luminosity is "+currentLight+" lux and I turned on the lights");
-            //logic to modify current parameter in living room
+            Room.devices.get("Lights").turnON();
         }
         
     }

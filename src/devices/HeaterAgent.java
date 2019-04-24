@@ -27,16 +27,17 @@ public class HeaterAgent extends SingleAgent{
     
      public void onMessage(ACLMessage msg){
         //System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
-        double temp = Double.parseDouble(msg.getContent());
+        double temp = Double.parseDouble(msg.getContent().split(",")[1]);
+        String season = msg.getContent().split(",")[0];
         
-        if(temp>18){
-            System.out.println("Hi! I'm Heater agent and the current temperature is "+temp);
-        }
-        else{
-            System.out.println("Hi! I'm Heater agent, current temperature is "+temp+" and I turned on the heater");
-            //logic to modify current parameter in living room
-        }
-        
+          if(temp>16){
+                    System.out.println("Hi! I'm Heater agent and the current temperature is "+temp);
+                }
+                else{
+                     System.out.println("Hi! I'm Heater agent, current temperature is "+temp+" and I turned on the heater");
+            
+                }
+      
     }
     public void execute(){
 	System.out.println("Hi! I'm agent "+this.getName()+" and I start my execution");

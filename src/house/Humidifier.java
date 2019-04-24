@@ -11,8 +11,8 @@ package house;
  */
 public class Humidifier extends Device{
 
-    public Humidifier(){
-        super();
+    public Humidifier(double consum,double energy){
+        super(consum,energy);
     }
     @Override
     public void turnON() {
@@ -24,5 +24,19 @@ public class Humidifier extends Device{
         Humidifier.super.isON = false;//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    @Override
+    public boolean isON() {
+        return Humidifier.super.isON;
+    }
+      @Override
+    public double getConsumption() {
+         return Humidifier.super.consumption;
+    }
+
+    @Override
+    public double getEnergy() {
+       return Humidifier.super.energy;
+    }
+
 }
 

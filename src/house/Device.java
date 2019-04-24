@@ -12,11 +12,19 @@ package house;
 public abstract class Device {
     
     boolean isON;
-
-    public Device() {
+    double consumption;
+    double energy;
+    
+    public Device(double consumption,double energy) {
         this.isON = false;
+        this.consumption = consumption;
+        this.energy = energy;
     }
     
     public abstract void turnON();
     public abstract void  turnOFF();
+    public abstract double getConsumption();
+    public abstract boolean isON();
+    public abstract double getEnergy();
+    
 }

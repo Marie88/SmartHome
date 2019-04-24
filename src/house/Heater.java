@@ -11,8 +11,8 @@ package house;
  */
 public class Heater extends Device{
 
-    public Heater(){
-        super();
+    public Heater(double consum,double energy){
+        super(consum,energy);
     }
     @Override
     public void turnON() {
@@ -23,5 +23,19 @@ public class Heater extends Device{
     public void turnOFF() {
         Heater.super.isON = false;//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Override
+    public boolean isON() {
+        return Heater.super.isON;
+    }
+    @Override
+    public double getConsumption() {
+        return Heater.super.consumption;
+    }
+
+    @Override
+    public double getEnergy() {
+       return Heater.super.energy;
+    }
+
 }
