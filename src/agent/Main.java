@@ -51,10 +51,10 @@ public class Main {
 
         getlines(seedData(season));
         
-        AC ac=new AC(0,5);
-        Heater heat = new Heater(0,5);
-        Humidifier humid = new Humidifier(0,10);
-        Lights lights = new Lights(0,200);
+        AC ac=new AC(5.2,10); //subtracts 10oC per h
+        Heater heat = new Heater(1.17,5);// adds 5oC per h
+        Humidifier humid = new Humidifier(0.05,7); //adds/substracts 7% per h of humidity
+        Lights lights = new Lights(0.16,200);// two incandescent bulbs
         Windows window = new Windows();
         Blinds blin = new Blinds();
         

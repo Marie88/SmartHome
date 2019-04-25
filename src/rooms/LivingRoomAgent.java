@@ -42,8 +42,10 @@ public class LivingRoomAgent extends SingleAgent {
     double externalH;
     double externalL;
     
+    double heat = Room.devices.get("Heater").getEnergy();
+    double humid = Room.devices.get("Humidifier").getEnergy();
+    double cool = Room.devices.get("AC").getEnergy();
     
-     double t; double l; double h;
     public LivingRoomAgent(AgentID aid, Room room,String season) throws Exception {
         super(aid);
         this.livingroom = room;
@@ -67,9 +69,9 @@ public class LivingRoomAgent extends SingleAgent {
 
     public void execute() {
         System.out.println("Hi! I'm agent " + this.getName() + " and I start my execution");
-      
-        try {
-            
+        
+        
+        try {       
             while (true) {
                 sleep(5000);
                 if(iterator<167){
@@ -122,44 +124,56 @@ public class LivingRoomAgent extends SingleAgent {
                 }
                     break;
                 case ACAgent:{
-                    double outTemp = this.currentT;//Double.parseDouble(getValuesFromSeedData(iterator)[7]);
-                    double current = livingroom.modelTemp(outTemp);
-                    msg.setContent(this.season+","+current);
+                  //  double outTemp = this.currentT;//Double.parseDouble(getValuesFromSeedData(iterator)[7]);
+                    //double current = livingroom.modelTemp(outTemp);
+                    msg.setContent(this.season+","+currentT);
                 }
                     break;
                 case HumidityAgent:{
-                    double outHum = this.currentH;//Double.parseDouble(getValuesFromSeedData(iterator)[8]);
-                    double outTemp = this.currentT;//Double.parseDouble(getValuesFromSeedData(iterator)[7]);
-                    double current = livingroom.modelHumidity(outHum,outTemp);
+                   // double outHum = this.currentH;//Double.parseDouble(getValuesFromSeedData(iterator)[8]);
+                  //  double outTemp = this.currentT;//Double.parseDouble(getValuesFromSeedData(iterator)[7]);
+                   // double current = livingroom.modelHumidity(outHum,outTemp);
                    
-                    msg.setContent(this.season+"," + current);
+                    msg.setContent("" + currentH);
                 }
                     break;
                 case BlindsAgent:{
-                    double outLum = this.currentL;//Double.parseDouble(getValuesFromSeedData(iterator)[6]);
-                    double current = livingroom.modelLuminosity(outLum);
-                    msg.setContent(""+current); 
+                   // double outLum = this.currentL;//Double.parseDouble(getValuesFromSeedData(iterator)[6]);
+                    //double current = livingroom.modelLuminosity(outLum);
+                    msg.setContent(""+currentL); 
                 }
                     break;
                 case HeaterAgent:{
-                    double outTemp = this.currentT;//Double.parseDouble(getValuesFromSeedData(iterator)[7]);
-                    double current = livingroom.modelTemp(outTemp);
-                    msg.setContent(this.season+","+current);
-                }
+                    
+                    livingroom.temperature = currentT;
+
+                    if(Room.devices.get("Heater").isON()){
+                        heat = heat + Room.devices.get("Heater").getEnergy();
+                        livingroom.temperature = currentT+heat;
+                    
+                    }
+                    else{
+                         heat-=Room.devices.get("Heater").getEnergy();
+                         livingroom.temperature = currentT+heat;
+                       
+                    }
+                      msg.setContent(""+livingroom.temperature);  
+                    }
+                 
                     break;
                 case WindowAgent:{
-                    double outHum = this.currentH;//Double.parseDouble(getValuesFromSeedData(iterator)[8]);
+                   /* double outHum = this.currentH;//Double.parseDouble(getValuesFromSeedData(iterator)[8]);
                     double outTemp = this.currentT;//Double.parseDouble(getValuesFromSeedData(iterator)[7]);
                     double currHum = livingroom.modelHumidity(outHum,outTemp);
-                    double currTemp = livingroom.modelTemp(outTemp);
-                    msg.setContent(this.season+"," + currTemp+","+currHum);
+                    double currTemp = livingroom.modelTemp(outTemp);*/
+                    msg.setContent(currentT+","+currentH);
                 }
                     break;
                 default:
                     break;
 
             }
-
+           
             this.send(msg);
         }
     }

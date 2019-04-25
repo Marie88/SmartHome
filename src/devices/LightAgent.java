@@ -9,6 +9,7 @@ import es.upv.dsic.gti_ia.core.ACLMessage;
 import es.upv.dsic.gti_ia.core.AgentID;
 import es.upv.dsic.gti_ia.core.SingleAgent;
 import house.Room;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -43,6 +44,18 @@ public class LightAgent extends SingleAgent{
             Room.devices.get("Lights").turnON();
         }
         
+       /*  
+        double consum = 0;
+        DecimalFormat df = new DecimalFormat("#.##");
+        
+            for(String key : Room.devices.keySet()){
+                
+                if(Room.devices.get(key).isON())
+                   consum += Room.devices.get(key).getConsumption();
+            }
+
+        System.out.println(" Current power consumption in the living room is "+df.format(consum)+" kWatts/hour");
+        */
     }
     
     public void execute(){

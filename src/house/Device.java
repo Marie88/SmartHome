@@ -12,7 +12,7 @@ package house;
 public abstract class Device {
     
     boolean isON;
-    double consumption;
+    double consumption;// both in kW/h
     double energy;
     
     public Device(double consumption,double energy) {

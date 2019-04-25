@@ -27,16 +27,28 @@ public class HeaterAgent extends SingleAgent{
     
      public void onMessage(ACLMessage msg){
         //System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
-        double temp = Double.parseDouble(msg.getContent().split(",")[1]);
-        String season = msg.getContent().split(",")[0];
+        double temperature = Double.parseDouble(msg.getContent());
+        //String season = msg.getContent().split(",")[0];
         
-          if(temp>16){
-                    System.out.println("Hi! I'm Heater agent and the current temperature is "+temp);
-                }
-                else{
-                     System.out.println("Hi! I'm Heater agent, current temperature is "+temp+" and I turned on the heater");
+        if(temperature>16 && temperature<25 && Room.devices.get("Heater").isON()){
+            System.out.println("Hi! I'm Heater agent and the current temperature is "+temperature+" and the heater is on");
             
-                }
+        }
+        else if (temperature<=16 && !Room.devices.get("Heater").isON()){
+            System.out.println("Hi! I'm Heater agent, current temperature is "+temperature+" and I turned on the heater");
+            Room.devices.get("Heater").turnON();
+        }
+        else if (temperature<=16 && Room.devices.get("Heater").isON()){
+            System.out.println("Hi! I'm Heater agent, current temperature is "+temperature+" and the heater is turned on");
+            Room.devices.get("Heater").turnON();
+        }
+        else if (temperature >= 25 && Room.devices.get("Heater").isON()){
+            System.out.println("Hi! I'm Heater agent, current temperature is "+temperature+" and I turned off the heater");
+            Room.devices.get("Heater").turnOFF();
+        }
+        else{
+             System.out.println("Hi! I'm Heater agent, current temperature is "+temperature+" and the heater is turned off");
+        }
       
     }
     public void execute(){

@@ -25,7 +25,7 @@ public class HumidityAgent extends SingleAgent{
     
       public void onMessage(ACLMessage msg){
       
-        double currentHum = Double.parseDouble(msg.getContent().split(",")[1]);
+        double currentHum = Double.parseDouble(msg.getContent());
         if(!(currentHum<30 || currentHum >60)){
             System.out.println("Hi! I'm Humidity agent and the current humidity is "+currentHum);
         }
