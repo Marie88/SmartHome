@@ -8,6 +8,7 @@ package devices;
 import es.upv.dsic.gti_ia.core.ACLMessage;
 import es.upv.dsic.gti_ia.core.AgentID;
 import es.upv.dsic.gti_ia.core.SingleAgent;
+import house.Room;
 /**
  *
  * @author admin
@@ -26,11 +27,17 @@ public class HumidityAgent extends SingleAgent{
       public void onMessage(ACLMessage msg){
       
         double currentHum = Double.parseDouble(msg.getContent());
-        if(!(currentHum<30 || currentHum >60)){
-            System.out.println("Hi! I'm Humidity agent and the current humidity is "+currentHum);
+        if(currentHum>=30 && currentHum <=60 && Room.devices.get("Humidifier").isON()){
+            System.out.println("Hi! I'm Humidity agent and the current humidity is "+currentHum+" and I turned off the humidifier ");
+            Room.devices.get("Humidifier").turnOFF();
         }
-        else{
+        else if((currentHum<30 || currentHum >60) &&!Room.devices.get("Humidifier").isON()){
             System.out.println("Hi! I'm Humidity agent, current humidity is "+currentHum+" % and I turned on the humidifier");
+            Room.devices.get("Humidifier").turnON();
+        } else if (currentHum>=30 && currentHum <=60 && ! Room.devices.get("Humidifier").isON()){
+             System.out.println("Hi! I'm Humidity agent and the current humidity is "+currentHum+" and the humidifier is off");
+        } else if (currentHum<30 || currentHum >60 && Room.devices.get("Humidifier").isON()){
+              System.out.println("Hi! I'm Humidity agent and the current humidity is "+currentHum+" and the humidifier is on");
         }
         
     }

@@ -89,12 +89,12 @@ public class Main {
              */
             living_agent.start();
 
-            agent_light.start();
+           // agent_light.start();
             agent_ac.start();
             agent_hum.start();
-            agent_blin.start();
-            agent_heat.start();
-            agent_win.start();
+            //agent_blin.start();
+            //agent_heat.start();
+            //agent_win.start();
 
            // basement_agent.start();
            // agent_gen.start();
