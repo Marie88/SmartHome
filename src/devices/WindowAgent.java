@@ -24,8 +24,7 @@ public class WindowAgent extends SingleAgent{
     public void init(){this.active = true;}
     
      public void onMessage(ACLMessage msg){
-        //System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
-        
+       
         String[] params = msg.getContent().split(",");
         double currentTemp = Double.parseDouble(params[0]);
         double currentHum = Double.parseDouble(params[1]);

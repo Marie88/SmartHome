@@ -8,6 +8,7 @@ package devices;
 import es.upv.dsic.gti_ia.core.ACLMessage;
 import es.upv.dsic.gti_ia.core.AgentID;
 import es.upv.dsic.gti_ia.core.SingleAgent;
+import house.Room;
 /**
  *
  * @author admin
@@ -24,16 +25,29 @@ public class BlindsAgent extends SingleAgent{
     public void init(){this.active = true;}
     
     public void onMessage(ACLMessage msg){
-        //System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
-        double currentLight =Double.parseDouble(msg.getContent());
-        if(currentLight<2000){
-            System.out.println("Hi! I'm Blinds agent and the current luminosity is "+currentLight+" lux");
+        
+        double light = Double.parseDouble(msg.getContent().split(" ")[0]);
+         
+        if (msg.getContent().split(" ")[1].equals("turnON")) {
+           
+            Room.devices.get("Blinds").turnON();
+            System.out.println("Hi! I'm Blinds agent and the current luminosity is " + light + "lux and the blinds have opened");
+            
+        } else if(msg.getContent().split(" ")[1].equals("turnOFF")) {
+           
+            Room.devices.get("Blinds").turnOFF();
+            System.out.println("Hi! I'm Blinds agent and the current luminosity is " + light + "lux and the blinds have closed");
         }
-        else{
-            System.out.println("Hi! I'm Blinds agent, current luminosity is "+currentLight+" lux and I closed the blinds"); 
-            //logic to modify current parameter in living room
+        else if (msg.getContent().split(" ")[1].equals("ON")){
+          
+            System.out.println("Hi! I'm Blinds agent and the current luminosity is " + light + "lux and the blinds are open");
+        }
+        else if (msg.getContent().split(" ")[1].equals("OFF")){
+          
+             System.out.println("Hi! I'm Blinds agent and the current luminosity is " + light + "lux and the blinds are closed");
         }
         
+  
     }
     
     public void execute(){

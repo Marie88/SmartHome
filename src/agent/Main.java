@@ -4,13 +4,15 @@ import devices.ACAgent;
 import devices.BlindsAgent;
 import devices.GeneratorAgent;
 import devices.HeaterAgent;
-import devices.HumidityAgent;
-import devices.LightAgent;
+import devices.HumidifierAgent;
+import goal_agents.HumidityAgent;
+import devices.BulbAgent;
 import devices.WindowAgent;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import es.upv.dsic.gti_ia.core.AgentID;
 import es.upv.dsic.gti_ia.core.AgentsConnection;
+import goal_agents.HeatAgent;
 import house.*;
 import house.Room;
 import java.io.BufferedReader;
@@ -25,6 +27,7 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 import rooms.BasementAgent;
 import rooms.LivingRoomAgent;
+import goal_agents.LightAgent;
 
 public class Main {
 
@@ -51,35 +54,38 @@ public class Main {
 
         getlines(seedData(season));
         
-        AC ac=new AC(5.2,10); //subtracts 10oC per h
+        AC ac=new AC(5.2,5); //subtracts 10oC per h
         Heater heat = new Heater(1.17,5);// adds 5oC per h
-        Humidifier humid = new Humidifier(0.05,7); //adds/substracts 7% per h of humidity
+        Humidifier humid = new Humidifier(0.05,3); //adds/substracts 3% per h of humidity
         Lights lights = new Lights(0.16,200);// two incandescent bulbs
-        Windows window = new Windows();
+      
         Blinds blin = new Blinds();
         
         HashMap<String,Device> devices= new HashMap<String,Device>();
         
         devices.put("AC",ac);devices.put("Heater",heat);devices.put("Humidifier",humid);
-        devices.put("Lights",lights);devices.put("Windows",window);devices.put("Blinds",blin);
+        devices.put("Lights",lights);devices.put("Blinds",blin);
         
         Room room = new Room(12,100,4,devices);
         try {
             /**
              * Instantiating device agents
              */
-            LightAgent agent_light = new LightAgent(new AgentID("LightAgent"));
+            HumidifierAgent agent_hum = new HumidifierAgent(new AgentID("HumidifierAgent"));
+            LightAgent goal_agent_light = new LightAgent(new AgentID("LightAgent"),room);
             ACAgent agent_ac = new ACAgent(new AgentID("ACAgent"));
-            HumidityAgent agent_hum = new HumidityAgent(new AgentID("HumidityAgent"));
+            HumidityAgent goal_agent_hum = new HumidityAgent(new AgentID("HumidityAgent"),room);
             BlindsAgent agent_blin = new BlindsAgent(new AgentID("BlindsAgent"));
+            BulbAgent agent_bulb = new BulbAgent(new AgentID("BulbAgent"));
             HeaterAgent agent_heat = new HeaterAgent(new AgentID("HeaterAgent"));
-            GeneratorAgent agent_gen = new GeneratorAgent(new AgentID("GeneratorAgent"),40);
-            WindowAgent agent_win = new WindowAgent(new AgentID("WindowAgent"));
+            HeatAgent goal_agent_heat=new HeatAgent(new AgentID("HeatAgent"),room,season);
+            //GeneratorAgent agent_gen = new GeneratorAgent(new AgentID("GeneratorAgent"),40);
+           
             /**
              * Instantiating a room environment agent
              */
-            //Consumer consumerAgent = new Consumer(new AgentID("Consumer"));
-            LivingRoomAgent living_agent = new LivingRoomAgent(new AgentID("LivingRoomAgent"), room,season);
+           
+            LivingRoomAgent living_agent = new LivingRoomAgent(new AgentID("LivingRoomAgent"));
             BasementAgent basement_agent = new BasementAgent(new AgentID("BasementAgent"), 12);
             /**
              *
@@ -89,12 +95,15 @@ public class Main {
              */
             living_agent.start();
 
-           // agent_light.start();
-            agent_ac.start();
+            goal_agent_light.start();
+            //agent_ac.start();
             agent_hum.start();
-            //agent_blin.start();
-            //agent_heat.start();
-            //agent_win.start();
+            goal_agent_hum.start();
+            agent_bulb.start();
+            agent_blin.start();
+           goal_agent_heat.start();
+           agent_heat.start();
+           
 
            // basement_agent.start();
            // agent_gen.start();

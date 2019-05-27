@@ -8,6 +8,7 @@ package devices;
 import es.upv.dsic.gti_ia.core.ACLMessage;
 import es.upv.dsic.gti_ia.core.AgentID;
 import es.upv.dsic.gti_ia.core.SingleAgent;
+import house.Room;
 
 /**
  *
@@ -24,16 +25,30 @@ public class ACAgent extends SingleAgent{
     public void init(){this.active = true;}
     
     public void onMessage(ACLMessage msg){
-        //System.out.println("Hi! I'm agent "+this.getName()+" and I've received the message: "+msg.getContent());
-        double currentTemp = Double.parseDouble(msg.getContent().split(",")[1]);
-        if(currentTemp<27){
-            System.out.println("Hi! I'm AC agent and the current temperature is "+currentTemp);
+        
+        
+        double temperature = Double.parseDouble(msg.getContent().split(" ")[0]);
+       
+        if (msg.getContent().split(" ")[1].equals("turnON")) {
+           
+            Room.devices.get("AC").turnON();
+            System.out.println("Hi! I'm AC agent and the current temperature is " + temperature + " and the AC is turned on");
+            
+        } else if(msg.getContent().split(" ")[1].equals("turnOFF")) {
+           
+            Room.devices.get("AC").turnOFF();
+            System.out.println("Hi! I'm AC agent and the current temperature is " + temperature + " and the AC is turned off");
         }
-        else{
-            System.out.println("Hi! I'm AC agent, current temperature is "+currentTemp+" and I turned on the AC");
-            //logic to modify current parameter in living room
+        else if (msg.getContent().split(" ")[1].equals("ON")){
+          
+            System.out.println("Hi! I'm AC agent and the current temperature is " + temperature + " and the AC is on");
+        }
+        else if (msg.getContent().split(" ")[1].equals("OFF")){
+          
+             System.out.println("Hi! I'm AC agent and the current temperature is " + temperature + " and the AC is off");
         }
         
+
     }
     public void execute(){
 	System.out.println("Hi! I'm agent "+this.getName()+" and I start my execution");

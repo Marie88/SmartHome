@@ -49,9 +49,9 @@ import java.util.HashMap;
  */
 public class Room {
     
-    public double temperature;
-    public double humidity;
-    public double luminosity;
+    public  double currentT;
+    public  double currentH;
+    public  double currentL;
     
     public static HashMap<String,Device> devices;
     
@@ -113,5 +113,6 @@ public class Room {
     public HashMap<String, Device> getDevices() {
         return devices;
     }
-    
+
+   
 }
