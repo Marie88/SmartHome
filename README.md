@@ -14,3 +14,6 @@ Prerequisites:
 Application execution:
       after starting Magentix using Start-Magentix.bat, open a terminal and place yourself under the location where the jar 
       is located and write java -jar SmartHouse.jar
+      
+      You will be requested to choose which season to simulate , you can choose between : winter,spring,summer,autumn.
+      Based on the season, also the devices to be turned on or off are chosen.
