@@ -9,6 +9,13 @@ import es.upv.dsic.gti_ia.core.ACLMessage;
 import es.upv.dsic.gti_ia.core.AgentID;
 import es.upv.dsic.gti_ia.core.SingleAgent;
 import house.Room;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author admin
@@ -16,13 +23,18 @@ import house.Room;
 public class HumidifierAgent extends SingleAgent{
   
     private boolean active;
-  
-    public HumidifierAgent(AgentID aid) throws Exception {
+    //public List<String> humLines ;
+    File output;
+   PrintWriter pw;
+    
+    public HumidifierAgent(AgentID aid,File output,PrintWriter pw) throws Exception {
         super(aid);
+        this.output = output;
+        this.pw = pw;
        
     }
     
-    public void init(){this.active = true;}
+    public void init(){this.active = true; }//humLines= new ArrayList<>();}
     
       public void onMessage(ACLMessage msg){
           
@@ -47,8 +59,16 @@ public class HumidifierAgent extends SingleAgent{
           
              System.out.println("Hi! I'm Humidifier agent and the current humidity is " + humidity + "% and the humidifier is off");
         }
-        
-    
+        //humLines.add(""+humidity);
+    // File csvOutputFile = new File("C:\\Users\\admin\\Documents\\NetBeansProjects\\SmartHouse\\src\\resources\\Results.txt");
+       // try (PrintWriter pw = new PrintWriter(output)) {
+            pw.append(" "+humidity);
+            
+       // } catch (FileNotFoundException ex) {
+         //   Logger.getLogger(ACAgent.class.getName()).log(Level.SEVERE, null, ex);
+        //}
+       
+        pw.flush();
     }
     
     public void execute(){

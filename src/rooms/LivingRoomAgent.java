@@ -12,6 +12,7 @@ import es.upv.dsic.gti_ia.core.AgentID;
 import es.upv.dsic.gti_ia.core.SingleAgent;
 import house.Room;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import static java.lang.Thread.sleep;
 import java.util.Random;
 import java.util.Scanner;
@@ -34,14 +35,15 @@ public class LivingRoomAgent extends SingleAgent {
     
     private int iterator=0;
     boolean gotMsg = false;
+    PrintWriter pw;
 
     double externalT;
     double externalH;
     double externalL;
  
-    public LivingRoomAgent(AgentID aid) throws Exception {
+    public LivingRoomAgent(AgentID aid,PrintWriter pw) throws Exception {
         super(aid);
-      
+        this.pw=pw;
     }
 
     @Override
@@ -70,6 +72,8 @@ public class LivingRoomAgent extends SingleAgent {
                     broadcast(iterator);
                     iterator++;
                 }else{
+
+                    pw.close();
                     iterator=0;
                 }
             }

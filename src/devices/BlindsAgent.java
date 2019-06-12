@@ -9,6 +9,11 @@ import es.upv.dsic.gti_ia.core.ACLMessage;
 import es.upv.dsic.gti_ia.core.AgentID;
 import es.upv.dsic.gti_ia.core.SingleAgent;
 import house.Room;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author admin
@@ -16,9 +21,13 @@ import house.Room;
 public class BlindsAgent extends SingleAgent{
     
     private boolean active;
+    File output ;
+    PrintWriter pw;
     
-     public BlindsAgent(AgentID aid) throws Exception {
+     public BlindsAgent(AgentID aid, File output,PrintWriter pw) throws Exception {
         super(aid);
+        this.output = output;
+        this.pw = pw;
        
     }
     
@@ -46,7 +55,11 @@ public class BlindsAgent extends SingleAgent{
           
              System.out.println("Hi! I'm Blinds agent and the current luminosity is " + light + "lux and the blinds are closed");
         }
+        // File csvOutputFile = new File("C:\\Users\\admin\\Documents\\NetBeansProjects\\SmartHouse\\src\\resources\\Results.txt");
         
+        pw.append(" "+light);
+        pw.flush();
+       
   
     }
     

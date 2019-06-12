@@ -9,7 +9,12 @@ import es.upv.dsic.gti_ia.core.ACLMessage;
 import es.upv.dsic.gti_ia.core.AgentID;
 import es.upv.dsic.gti_ia.core.SingleAgent;
 import house.Room;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.text.DecimalFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,10 +23,14 @@ import java.text.DecimalFormat;
 public class BulbAgent extends SingleAgent{
 
     private boolean active;
+    File output;
+    PrintWriter pw;
     
-    public BulbAgent(AgentID aid) throws Exception {
+    public BulbAgent(AgentID aid,File output,PrintWriter pw) throws Exception {
         super(aid);
         this.active = false;
+        this.output = output;
+        this.pw = pw;
     }
     
      public void onMessage(ACLMessage msg){
@@ -46,7 +55,13 @@ public class BulbAgent extends SingleAgent{
           
              System.out.println("Hi! I'm Bulb agent and the current luminosity is " + light + "lux and the bulbs are off");
         }
-     
+     // File csvOutputFile = new File("C:\\Users\\admin\\Documents\\NetBeansProjects\\SmartHouse\\src\\resources\\Results.txt");
+      //  try (PrintWriter pw = new PrintWriter(output)) {
+            pw.append(" "+light);
+            pw.flush();
+        //} catch (FileNotFoundException ex) {
+        //    Logger.getLogger(ACAgent.class.getName()).log(Level.SEVERE, null, ex);
+       // }
     }
     
     public void execute(){

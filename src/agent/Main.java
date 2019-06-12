@@ -28,6 +28,14 @@ import java.util.StringTokenizer;
 import rooms.BasementAgent;
 import rooms.LivingRoomAgent;
 import goal_agents.LightAgent;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 public class Main {
 
@@ -48,7 +56,10 @@ public class Main {
 
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Enter the season you would like to simulate");
-
+        File csvOutputFile = new File("Results.txt");
+        Path path=Paths.get("Results.txt");
+        PrintWriter pw = new PrintWriter(new FileWriter(csvOutputFile,true));
+        Files.newBufferedWriter(path, StandardOpenOption.TRUNCATE_EXISTING);
         season = myObj.nextLine();
         myObj.close();
 
@@ -71,13 +82,13 @@ public class Main {
             /**
              * Instantiating device agents
              */
-            HumidifierAgent agent_hum = new HumidifierAgent(new AgentID("HumidifierAgent"));
+            HumidifierAgent agent_hum = new HumidifierAgent(new AgentID("HumidifierAgent"),csvOutputFile,pw);
             LightAgent goal_agent_light = new LightAgent(new AgentID("LightAgent"),room);
-            ACAgent agent_ac = new ACAgent(new AgentID("ACAgent"));
+            ACAgent agent_ac = new ACAgent(new AgentID("ACAgent"),csvOutputFile,pw);
             HumidityAgent goal_agent_hum = new HumidityAgent(new AgentID("HumidityAgent"),room);
-            BlindsAgent agent_blin = new BlindsAgent(new AgentID("BlindsAgent"));
-            BulbAgent agent_bulb = new BulbAgent(new AgentID("BulbAgent"));
-            HeaterAgent agent_heat = new HeaterAgent(new AgentID("HeaterAgent"));
+            BlindsAgent agent_blin = new BlindsAgent(new AgentID("BlindsAgent"),csvOutputFile,pw);
+            BulbAgent agent_bulb = new BulbAgent(new AgentID("BulbAgent"),csvOutputFile,pw);
+            HeaterAgent agent_heat = new HeaterAgent(new AgentID("HeaterAgent"),csvOutputFile,pw);
             HeatAgent goal_agent_heat=new HeatAgent(new AgentID("HeatAgent"),room,season);
             //GeneratorAgent agent_gen = new GeneratorAgent(new AgentID("GeneratorAgent"),40);
            
@@ -85,7 +96,7 @@ public class Main {
              * Instantiating a room environment agent
              */
            
-            LivingRoomAgent living_agent = new LivingRoomAgent(new AgentID("LivingRoomAgent"));
+            LivingRoomAgent living_agent = new LivingRoomAgent(new AgentID("LivingRoomAgent"),pw);
             BasementAgent basement_agent = new BasementAgent(new AgentID("BasementAgent"), 12);
             /**
              *
@@ -107,7 +118,7 @@ public class Main {
 
            // basement_agent.start();
            // agent_gen.start();
-
+           //List<String> lala = agent_hum.humLines;
         } catch (Exception e) {
             logger.error("Error " + e.getMessage());
         }
@@ -161,4 +172,5 @@ public class Main {
         return list;
 
     }
+    
 }
